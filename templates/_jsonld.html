@@ -1,0 +1,23 @@
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MedicalBusiness",
+    "name": {{json business_name}},
+    "description": {{json business_blurb}},
+    "url": "{{plain site_url}}/",
+    "telephone": "{{phone_tel}}",
+    "email": {{json email}},
+    "priceRange": {{json price_range}},
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": {{json address_street}},
+      "addressLocality": {{json address_city}},
+      "addressRegion": {{json address_state}},
+      "postalCode": {{json address_zip}},
+      "addressCountry": "US"
+    },
+    "sameAs": [{{json psychology_today_url}}],
+    "areaServed": {{json_list areas_served_for_google}},
+    "founder": { "@type": "Person", "name": "Elisa D. Yost", "jobTitle": "Licensed Professional Counselor" }
+  }
+  </script>

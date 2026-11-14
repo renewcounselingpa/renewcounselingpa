@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="utf-8">
+  <script>document.documentElement.classList.remove('no-js');</script>
+{{#if is_404}}
+  <script>
+    // This page can be shown at any broken address, so point its links and files at the site root.
+    // While the site lives in the /renewcounselingpa/ folder (e.g. griffinansel.com/renewcounselingpa/
+    // or gansel51.github.io/renewcounselingpa/) the root is that folder; on its own domain it is /.
+    (function () {
+      var root = /^\/renewcounselingpa(\/|$)/.test(location.pathname) ? '/renewcounselingpa/' : '/';
+      document.write('<base href="' + root + '">');
+    })();
+  </script>
+  <meta name="robots" content="noindex">
+{{/if}}
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="color-scheme" content="light only">
+  <meta name="theme-color" content="#2f4a3a">
+  <title>{{plain page_title}}</title>
+  <meta name="description" content="{{plain page_description}}">
+  <link rel="icon" href="images/logo.svg" type="image/svg+xml">
+  <link rel="icon" href="images/favicon-32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="images/favicon-48.png" sizes="48x48" type="image/png">
+  <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
+{{#unless is_404}}
+  <link rel="canonical" href="{{plain site_url}}/{{page_path}}">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="{{plain business_name}}">
+  <meta property="og:title" content="{{plain page_title}}">
+  <meta property="og:description" content="{{plain page_description}}">
+  <meta property="og:url" content="{{plain site_url}}/{{page_path}}">
+  <meta property="og:image" content="{{plain site_url}}/images/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="{{plain share_image_alt}}">
+  <meta name="twitter:card" content="summary_large_image">
+{{/unless}}
+{{#if preload_image}}
+  <link rel="preload" href="{{preload_image}}" as="image" fetchpriority="high">
+{{/if}}
+  <link rel="preload" href="fonts/nunito-sans.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/cormorant-garamond.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/styles.css">
+{{#if is_home}}
+{{> _jsonld.html}}
+{{/if}}
+</head>
+<body data-phone="{{plain phone}}" data-email="{{plain email}}">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html">
+        <img src="images/logo.svg" alt="" width="44" height="44">
+        <span class="brand-name">Renew<small>Counseling</small></span>
+      </a>
+      <button class="nav-toggle" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="Main">
+        <ul>
+          <li><a href="index.html"{{current index.html}}>{{nav_home}}</a></li>
+          <li><a href="therapies.html"{{current therapies.html}}>{{nav_therapies}}</a></li>
+          <li><a href="about.html"{{current about.html}}>{{nav_about}}</a></li>
+          <li><a href="fees.html"{{current fees.html}}>{{nav_fees}}</a></li>
+          <li><a href="contact.html"{{current contact.html}}>{{nav_contact}}</a></li>
+          <li class="nav-phone"><a href="tel:{{phone_tel}}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>{{phone}}</a></li>
+          <li><a class="btn btn-primary" href="contact.html#contact-form">{{cta_button}}</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+{{> @page}}
+  </main>
+
+  <div class="crisis-bar" role="note">
+    {{crisis_notice}}
+  </div>
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a class="brand" href="index.html">
+            <img src="images/logo.svg" alt="" width="44" height="44">
+            <span class="brand-name">Renew<small>Counseling</small></span>
+          </a>
+          <p>{{footer_tagline}}</p>
+        </div>
+        <div>
+          <h4>Visit</h4>
+          <ul>
+            <li>{{address_street}}</li>
+            <li>{{address_line2}}</li>
+            <li><a href="contact.html">{{footer_hours_link}}</a></li>
+            <li><a href="fees.html">{{footer_fees_link}}</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="tel:{{phone_tel}}">{{phone}}</a></li>
+            <li><a href="mailto:{{plain email}}">{{email}}</a></li>
+            <li><a href="contact.html#contact-form">{{footer_message_link}}</a></li>
+            <li><a href="{{plain psychology_today_url}}" target="_blank" rel="noopener">{{footer_pt_link}}</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; <span data-year>2026</span> {{legal_name}}. {{footer_rights}} · <a href="privacy.html">{{footer_privacy_link}}</a> · <a href="privacy.html#npp">{{footer_npp_link}}</a></span>
+        <span>{{therapist_name}} · PA License #{{pa_license}}</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Mobile quick-action bar (phones only) -->
+  <nav class="mobile-bar" aria-label="Quick actions">
+    <a href="tel:{{phone_tel}}" class="mobile-bar-call"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg><span class="label-long">Call {{phone}}</span><span class="label-short">{{mobile_call_short}}</span></a>
+    <a href="contact.html#contact-form" class="mobile-bar-book">{{mobile_message}}</a>
+  </nav>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>

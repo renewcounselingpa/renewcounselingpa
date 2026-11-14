@@ -1,0 +1,84 @@
+    <section class="page-banner" style="background-image:url('images/banner-canopy.jpg')">
+      <div class="container">
+        <span class="eyebrow">{{fees_eyebrow}}</span>
+        <h1>{{fees_heading}}</h1>
+        <p>{{fees_text}}</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">{{rates_eyebrow}}</span>
+          <h2>{{rates_title}}</h2>
+        </div>
+        <div class="card-grid price-grid">
+          <article class="card price-card">
+            <h3>{{price_consult_title}}</h3>
+            <p class="price">{{price_consult}}</p>
+            <p>{{price_consult_text}}</p>
+          </article>
+          <article class="card price-card">
+            <h3>{{price_individual_title}}</h3>
+            <p class="price">{{price_individual}}</p>
+            <p>{{price_individual_text}}</p>
+          </article>
+          <article class="card price-card">
+            <h3>{{price_couples_title}}</h3>
+            <p class="price">{{price_couples}}</p>
+            <p>{{price_couples_text}}</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-tint">
+      <div class="container split" style="align-items:start">
+        <div>
+          <span class="eyebrow">{{insurance_eyebrow}}</span>
+          <h2>{{insurance_title}}</h2>
+          <h3 class="sub">{{insurance_accepted_title}}</h3>
+          <ul class="tags tags-lg">{{#each insurance_accepted}}<li>{{this}}</li>{{/each}}</ul>
+          <p>{{insurance_other}}</p>
+        </div>
+        <div class="card">
+          <h3>{{insurance_questions_title}}</h3>
+          <ul class="credentials">
+{{#each insurance_questions}}
+            <li><span>{{this}}</span></li>
+{{/each}}
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="fact-grid">
+          <div>
+            <h3>{{payment_title}}</h3>
+            <p>{{payment_text}}</p>
+          </div>
+          <div>
+            <h3>{{sliding_title}}</h3>
+            <p>{{sliding_text}}</p>
+          </div>
+          <div>
+            <h3>{{cancel_title}}</h3>
+            <p>{{cancel_text}}</p>
+          </div>
+        </div>
+        <div class="notice">
+          <h3>{{gfe_title}}</h3>
+          <p>{{gfe_text}}</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-band">
+      <div class="container">
+        <h2>{{fees_cta_title}}</h2>
+        <p>{{fees_cta_text}}</p>
+        <a class="btn btn-primary" href="contact.html#contact-form">{{cta_button}}</a>
+      </div>
+    </section>

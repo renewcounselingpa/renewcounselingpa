@@ -41,6 +41,10 @@ if (bar && 'IntersectionObserver' in window) {
   document.addEventListener('focusout', () => { visible.delete('typing'); update(); });
 }
 
+// Contact details come from content.txt via data attributes on <body>
+const PHONE = document.body.dataset.phone || '';
+const EMAIL = document.body.dataset.email || '';
+
 // Footer year
 document.querySelectorAll('[data-year]').forEach((el) => {
   el.textContent = new Date().getFullYear();
@@ -92,7 +96,7 @@ if (form) {
     // browsers have no email app set up, so a mailto: link can silently do nothing; let the
     // visitor pick their email service or copy the message.
     if (form.action.includes('YOUR_FORM_ID')) {
-      const to = 'elisa@renewcounselingpa.com';
+      const to = EMAIL;
       const v = (name) => (form.elements[name] ? form.elements[name].value.trim() : '');
       const subject = `Consultation request from ${v('first_name')} ${v('last_name')}`;
       const body = [
@@ -139,7 +143,7 @@ if (form) {
       choices.append(copy);
 
       status.classList.add('success');
-      status.textContent = `Almost done: choose how to send your message to ${to}, or call (570) 734-7798.`;
+      status.textContent = `Almost done: choose how to send your message to ${to}, or call ${PHONE}.`;
       return;
     }
 
@@ -157,7 +161,7 @@ if (form) {
       status.textContent = "Thank you! Your message has been sent. I'll be in touch soon.";
     } catch (err) {
       status.classList.add('error');
-      status.textContent = 'Sorry, something went wrong. Please call (570) 734-7798 or email elisa@renewcounselingpa.com.';
+      status.textContent = `Sorry, something went wrong. Please call ${PHONE} or email ${EMAIL}.`;
     } finally {
       button.disabled = false;
       button.textContent = 'Send message';

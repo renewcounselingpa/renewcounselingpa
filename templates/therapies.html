@@ -1,0 +1,104 @@
+    <section class="page-banner" style="background-image:url('images/banner-ferns.jpg')">
+      <div class="container">
+        <span class="eyebrow">{{therapies_eyebrow}}</span>
+        <h1>{{therapies_heading}}</h1>
+        <p>{{therapies_text}}</p>
+      </div>
+    </section>
+
+    <!-- Quick links to each focus area -->
+    <nav class="jump-grid container" aria-label="Focus areas">
+      <a href="#anxiety">{{anxiety_title}}</a>
+      <a href="#depression">{{depression_title}}</a>
+      <a href="#trauma">{{trauma_title}}</a>
+      <a href="#families">{{families_title}}</a>
+    </nav>
+
+    <section class="section section-tight">
+      <div class="container">
+        <article class="therapy" id="anxiety">
+          <div class="photo-frame"><img src="images/therapy-1.jpg" alt="{{plain anxiety_photo_alt}}" loading="lazy" width="800" height="800"></div>
+          <div>
+            <h2>{{anxiety_title}}</h2>
+            <p>{{anxiety_text}}</p>
+            <ul class="tags">{{#each anxiety_tags}}<li>{{this}}</li>{{/each}}</ul>
+            <a class="text-cta" href="contact.html#contact-form">{{cta_button}} →</a>
+          </div>
+        </article>
+
+        <article class="therapy" id="depression">
+          <div class="photo-frame"><img src="images/therapy-2.jpg" alt="{{plain depression_photo_alt}}" loading="lazy" width="800" height="800"></div>
+          <div>
+            <h2>{{depression_title}}</h2>
+            <p>{{depression_text}}</p>
+            <ul class="tags">{{#each depression_tags}}<li>{{this}}</li>{{/each}}</ul>
+            <a class="text-cta" href="contact.html#contact-form">{{cta_button}} →</a>
+          </div>
+        </article>
+
+        <article class="therapy" id="trauma">
+          <div class="photo-frame"><img src="images/therapy-3.jpg" alt="{{plain trauma_photo_alt}}" loading="lazy" width="800" height="800"></div>
+          <div>
+            <h2>{{trauma_title}}</h2>
+            <p>{{trauma_text}}</p>
+            <ul class="tags">{{#each trauma_tags}}<li>{{this}}</li>{{/each}}</ul>
+            <a class="text-cta" href="contact.html#contact-form">{{cta_button}} →</a>
+          </div>
+        </article>
+
+        <article class="therapy" id="families">
+          <div class="photo-frame"><img src="images/therapy-4.jpg" alt="{{plain families_photo_alt}}" loading="lazy" width="800" height="800"></div>
+          <div>
+            <h2>{{families_title}}</h2>
+            <p>{{families_text}}</p>
+            <ul class="tags">{{#each families_tags}}<li>{{this}}</li>{{/each}}</ul>
+            <a class="text-cta" href="contact.html#contact-form">{{cta_button}} →</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section-tint">
+      <div class="container">
+        <div class="section-head center">
+          <span class="eyebrow">{{other_areas_eyebrow}}</span>
+          <h2>{{other_areas_title}}</h2>
+        </div>
+        <ul class="tags tags-lg tags-center">
+{{#each other_areas}}
+          <li>{{this}}</li>
+{{/each}}
+        </ul>
+      </div>
+    </section>
+
+    <section class="section section-dark">
+      <div class="container">
+        <blockquote class="quote">
+          {{therapies_quote}}
+          <cite>{{therapies_quote_by}}</cite>
+        </blockquote>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head center">
+          <span class="eyebrow">{{methods_eyebrow}}</span>
+          <h2>{{methods_title}}</h2>
+        </div>
+        <div class="card-grid">
+{{#each methods}}
+          <article class="card"><h3>{{this.1}}</h3><p>{{this.2}}</p></article>
+{{/each}}
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-band">
+      <div class="container">
+        <h2>{{therapies_cta_title}}</h2>
+        <p>{{therapies_cta_text}}</p>
+        <a class="btn btn-primary" href="contact.html#contact-form">{{cta_button}}</a>
+      </div>
+    </section>

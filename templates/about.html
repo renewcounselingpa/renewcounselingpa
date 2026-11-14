@@ -1,0 +1,80 @@
+    <section class="page-banner" style="background-image:url('images/banner-canopy.jpg')">
+      <div class="container">
+        <span class="eyebrow">{{about_eyebrow}}</span>
+        <h1>{{about_heading}}</h1>
+        <p>{{about_text}}</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container split">
+        <div class="photo-frame">
+          <img class="portrait" src="images/elisa-yost.jpg" alt="{{plain about_portrait_alt}}" loading="lazy" width="320" height="400">
+        </div>
+        <div>
+          <span class="eyebrow">{{about_story_eyebrow}}</span>
+          <h2>{{about_story_title}}</h2>
+          <p class="lead">{{about_story_lead}}</p>
+{{#each about_story}}
+          <p>{{this}}</p>
+{{/each}}
+          <a class="btn btn-primary" href="contact.html#contact-form">{{cta_button}}</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-dark">
+      <div class="container">
+        <blockquote class="quote">
+          {{about_quote}}
+          <cite>{{about_quote_by}}</cite>
+        </blockquote>
+      </div>
+    </section>
+
+    <section class="section section-tint">
+      <div class="container split reverse">
+        <div class="photo-frame wide">
+          <img src="images/headshot-3.jpg" alt="{{plain about_approach_photo_alt}}" loading="lazy" width="1200" height="900">
+        </div>
+        <div>
+          <span class="eyebrow">{{about_approach_eyebrow}}</span>
+          <h2>{{about_approach_title}}</h2>
+{{#each about_approach}}
+          <p>{{this}}</p>
+{{/each}}
+          <p class="lead" style="margin-bottom:0"><em>{{about_approach_closing}}</em></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container split" style="align-items:start">
+        <div>
+          <span class="eyebrow">{{credentials_eyebrow}}</span>
+          <h2>{{credentials_title}}</h2>
+          <ul class="credentials">
+{{#each credentials}}
+            <li><span>{{this}}</span></li>
+{{/each}}
+          </ul>
+          <p class="muted" style="margin-top:18px">{{credentials_links}}</p>
+        </div>
+        <div>
+          <span class="eyebrow">{{endorsement_eyebrow}}</span>
+          <figure class="endorsement">
+            <blockquote>{{endorsement_quote}}</blockquote>
+            <figcaption>{{endorsement_by}}</figcaption>
+          </figure>
+          <a class="btn btn-outline" href="fees.html">{{endorsement_button}}</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-band">
+      <div class="container">
+        <h2>{{about_cta_title}}</h2>
+        <p>{{about_cta_text}}</p>
+        <a class="btn btn-primary" href="contact.html#contact-form">{{cta_button}}</a>
+      </div>
+    </section>

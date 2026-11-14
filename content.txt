@@ -1,0 +1,437 @@
+# ============================================================================
+#  RENEW COUNSELING: WEBSITE TEXT
+#
+#  This is the ONE file to edit to change the words on the website.
+#  See EDITING.md for step-by-step instructions (no GitHub experience needed).
+#
+#  QUICK RULES
+#   - Each line looks like:   name: the text that appears on the website
+#     Only change the text AFTER the first colon. Never change the name before it.
+#   - A line starting with # is a note to you. It never appears on the website.
+#   - Some entries are lists. The name is on its own line, then each item
+#     starts with "- ":
+#         tags:
+#         - First item
+#         - Second item
+#     To add an item, add another "- " line. To remove one, delete its line.
+#   - In a few lists, a "|" separates two parts, like "Title | Description".
+#   - Just type & normally (Trauma & PTSD). No special codes are needed.
+#
+#  SPECIAL MARKS YOU CAN USE INSIDE TEXT
+#   **bold text**                  makes text bold
+#   *italic text*                  makes text italic
+#   [link words](https://...)      makes a link  (use contact.html#contact-form
+#                                  to link to the contact form)
+#   {phone}  {email}               become clickable phone and email links
+#   {years}  {fee_individual}      fill in the matching setting from below, so a
+#                                  number only has to be changed in one place
+#   [[text]]                       a yellow "still to do" highlight
+#
+#  After you save, the site updates by itself in a minute or two.
+# ============================================================================
+
+
+# ============================================================================
+#  SETTINGS: things used all over the site
+# ============================================================================
+
+business_name: Renew Counseling
+therapist_name: Elisa D. Yost, MS, LPC
+legal_name: Elisa D Yost LLC
+
+phone: (570) 734-7798
+email: elisa@renewcounselingpa.com
+
+address_street: 102 Wheatfield Drive, Suite B
+address_city: Milford
+address_state: PA
+address_zip: 18337
+
+# Update this number each year (also update Psychology Today).
+years: 7
+
+pa_license: PC020602
+nj_license: 37PC01265200
+
+fee_individual: $130
+fee_couples: $150
+
+# Type yes or no. "no" hides the green "Accepting new clients" notes.
+accepting_clients: yes
+
+psychology_today_url: https://www.psychologytoday.com/us/therapists/elisa-d-yost-milford-pa/1815786
+license_verify_url: https://www.pals.pa.gov/#/page/search
+
+# Contact form. Replace YOUR_FORM_ID with the ID from formspree.io (see README.md).
+formspree_id: YOUR_FORM_ID
+
+# The website address, with no slash at the end. Used for search engines and link previews.
+site_url: https://www.renewcounselingpa.com
+
+
+# ============================================================================
+#  SHARED ON EVERY PAGE: menu, footer, call bar
+# ============================================================================
+
+nav_home: Home
+nav_therapies: Focused Therapies
+nav_about: About Me
+nav_fees: Fees & Insurance
+nav_contact: Contact
+
+# The main button. It appears many times across the site.
+cta_button: Request a free consultation
+
+crisis_notice: If you are in crisis or thinking about harming yourself, call or text [988](tel:988) (Suicide & Crisis Lifeline) or call [911](tel:911).
+
+footer_tagline: Counseling in Milford, PA, and online for residents of PA and NJ.
+footer_hours_link: Hours & directions
+footer_fees_link: Fees & insurance
+footer_message_link: Send a message
+footer_pt_link: Psychology Today profile
+footer_privacy_link: Privacy
+footer_npp_link: Notice of Privacy Practices
+footer_rights: All rights reserved.
+
+mobile_call_short: Call now
+mobile_message: Message
+
+
+# ============================================================================
+#  SEARCH ENGINES AND LINK PREVIEWS (not shown on the pages themselves)
+# ============================================================================
+
+share_image_alt: Renew Counseling, Elisa D. Yost, MS, LPC, Milford PA
+business_blurb: Counseling for anxiety, depression, trauma, couples, and families with Elisa D. Yost, MS, LPC.
+price_range: {fee_individual}-{fee_couples}
+areas_served_for_google:
+- Milford, PA
+- Pike County, PA
+- Port Jervis, NY
+- Orange County, NY
+- Sussex County, NJ
+
+
+# ============================================================================
+#  HOME PAGE
+# ============================================================================
+
+home_title: Renew Counseling | Elisa D. Yost, LPC | Therapist in Milford, PA
+home_description: Counseling for anxiety, depression, trauma, couples, and families with Elisa D. Yost, MS, LPC. In person in Milford, PA or online in PA and NJ. Free 15-minute consultation.
+
+# Top banner
+hero_eyebrow: Counseling in Milford, PA & online
+hero_title: Room to grow, at your own pace.
+hero_text: Support for anxiety, depression, trauma, couples, and families. In person in Milford or by telehealth across PA and NJ.
+hero_note: Accepting new clients · Evening and weekend appointments
+
+# The row of highlights under the banner
+trust_items:
+- **{years} years** in practice
+- Licensed in **PA & NJ**
+- [Verified on **Psychology Today**]({psychology_today_url})
+- **Medicare** accepted
+
+# "Welcome" section
+home_welcome_eyebrow: Welcome
+home_welcome_title: Hi, I'm Elisa.
+home_welcome_lead: I'm a licensed professional counselor with {years} years of experience helping adults, children and teens, and families, including families in crisis. I build genuine, trusting relationships and a safe space to explore life's challenges.
+home_welcome_text: Faith-based counseling is available for clients who want it.
+home_welcome_button: About me
+home_portrait_alt: Elisa D. Yost, MS, LPC, smiling in front of a sunflower field
+
+# Quote on the dark green band
+home_quote: “Healing begins with feeling seen, heard, and understood.”
+home_quote_by: {therapist_name}
+
+# Four boxes linking to the Focused Therapies page
+home_therapies_eyebrow: Focused Therapies
+home_therapies_title: What I help with
+anxiety_blurb: Calm the worry and find steadier ground.
+depression_blurb: Rebuild energy, hope, and balance.
+trauma_blurb: Heal at a pace that feels safe.
+families_blurb: Better communication and stronger relationships.
+
+# Fees at a glance
+fee_strip_consult_label: Consultation
+fee_strip_consult: Free, 15 min
+fee_strip_sessions_label: Sessions
+fee_strip_sessions: {fee_individual} individual · {fee_couples} couples
+fee_strip_insurance_label: Insurance
+fee_strip_insurance: Medicare · sliding scale available
+fee_strip_button: Fees & insurance
+
+# Three steps
+home_steps_eyebrow: Getting started
+home_steps_title: Three simple steps
+home_steps:
+- **Call** {phone} or send a message.
+- **Free 15-minute call** to see if we're a fit.
+- **Schedule your first session,** in Milford or online.
+home_office_alt: Calm room with a plant and soft natural light
+
+# Bottom band
+home_cta_title: Wondering if therapy might help?
+home_cta_text: Let's explore your concerns and goals together, starting with a free, no-pressure call.
+
+
+# ============================================================================
+#  FOCUSED THERAPIES PAGE
+# ============================================================================
+
+therapies_title: Focused Therapies | Renew Counseling, Milford PA
+therapies_description: Counseling for anxiety, depression, trauma and PTSD, couples, and families in Milford, PA and online in PA and NJ.
+
+therapies_eyebrow: Focused Therapies
+therapies_heading: How I can help
+therapies_text: For preteens, teens, adults, and older adults, as individuals, couples, or families.
+
+# The four main areas. Each has a name, a description, a few tags, and a photo description.
+anxiety_title: Anxiety
+anxiety_text: We start with practical coping skills to calm worry and stress, then work on what's underneath it.
+anxiety_tags:
+- Worry & stress
+- Coping skills
+- Emotional regulation
+anxiety_photo_alt: Sunlight filtering through a quiet forest
+
+depression_title: Depression
+depression_text: Find greater stability day to day, and understand the patterns that keep you stuck.
+depression_tags:
+- Low mood
+- Loss of motivation
+- Life balance
+depression_photo_alt: Close-up of a green fern frond
+
+trauma_title: Trauma & PTSD
+trauma_text: Extensive experience supporting people who have lived through trauma, using trauma-focused CBT.
+trauma_tags:
+- PTSD
+- Childhood trauma
+- Trauma-focused CBT
+trauma_photo_alt: A moss-covered fallen tree among ferns
+
+families_title: Couples & Families
+families_text: Navigate the dynamics that affect communication, relationships, and emotional well-being.
+families_tags:
+- Family conflict
+- Parenting
+- Marital & premarital
+families_photo_alt: Looking up at tall trees growing together toward the light
+
+other_areas_eyebrow: Also helping with
+other_areas_title: Other areas of expertise
+other_areas:
+- Anger management
+- Behavioral issues
+- Career counseling
+- Grief
+- Pregnancy, prenatal & postpartum
+- Spirituality
+- Women's issues
+
+therapies_quote: “Be patient toward all that is unsolved in your heart.”
+therapies_quote_by: Rainer Maria Rilke
+
+methods_eyebrow: My approach
+methods_title: Methods I use
+# One method per line: Name | Short description
+methods:
+- CBT | Reshape unhelpful thoughts and habits.
+- Trauma-Focused CBT | Structured trauma care for teens and families.
+- DBT | Skills for strong emotions and relationships.
+- ACT | Accept what's hard and move toward what matters.
+- Narrative Therapy | Look at the story you tell about your life, and find room to rewrite it.
+- Christian Counseling | Bring your faith into your goals, if you'd like.
+
+therapies_cta_title: Not sure where to start?
+therapies_cta_text: A free 15-minute consultation is a good first step.
+
+
+# ============================================================================
+#  ABOUT PAGE
+# ============================================================================
+
+about_title: About Elisa D. Yost, MS, LPC | Renew Counseling
+about_description: Meet Elisa D. Yost, a licensed professional counselor in Milford, PA with {years} years of experience, DBT and trauma-focused CBT training, and faith-based counseling available.
+
+about_eyebrow: About Me
+about_heading: Hi, I'm Elisa.
+about_text: {therapist_name} · Licensed Professional Counselor in PA & NJ
+
+about_story_eyebrow: My story
+about_story_title: Seen, heard, and understood
+about_story_lead: I believe healing begins with feeling seen, heard, and understood. I build genuine, trusting relationships with clients and a safe space to explore life's challenges. We'll work together to develop meaningful goals and effective strategies for growth.
+# One paragraph per line.
+about_story:
+- I have extensive experience supporting people who have experienced trauma, and I hold additional certification in trauma-informed therapy. I also love working with families and understand the dynamics that affect relationships, communication, and emotional well-being.
+- As a mother and new grandmother, I bring both professional training and lived experience to my work with children, parents, and families. One of my greatest joys is helping clients bring a faith-based perspective into their goals. I'm passionate about helping people discover healing, resilience, and lasting change.
+about_portrait_alt: Elisa D. Yost, Licensed Professional Counselor, standing in a sunflower field
+
+about_quote: “The curious paradox is that when I accept myself just as I am, then I can change.”
+about_quote_by: Carl Rogers
+
+about_approach_eyebrow: My approach
+about_approach_title: A journey toward renewal
+about_approach:
+- Together we'll explore the thoughts and behaviors that keep you stuck in patterns of hurt and heartache. Self-awareness is the space that allows for meaningful change.
+- We start with practical coping skills so day-to-day life feels more manageable, then work on the deeper roots. I draw on CBT, DBT, ACT, and narrative therapy, and I integrate Christian counseling principles for clients who want them.
+about_approach_closing: “I'd be honored to support you on your journey toward renewal.”
+about_approach_photo_alt: Green plants in a bright, calm room
+
+credentials_eyebrow: Credentials
+credentials_title: Education & training
+credentials:
+- MS in Counseling, Clarks Summit University (2019)
+- Licensed Professional Counselor, Pennsylvania #{pa_license}
+- Licensed Professional Counselor, New Jersey #{nj_license}
+- DBT certificate, Behavioral Tech Institute (2025)
+- Trauma-Focused CBT certificate (2019)
+- Member, American Counseling Association
+- {years} years in practice
+credentials_links: [Verify my PA license]({license_verify_url}) · [Psychology Today profile]({psychology_today_url})
+
+endorsement_eyebrow: From a colleague
+endorsement_quote: “I have known Elisa Yost for over 30 years. She genuinely cares about others. She is kind, compassionate, knowledgeable, and very good at what she does. As a wife and mother, she also brings a great deal of real-life experience!”
+endorsement_by: **Micah Sweeney**, MEd, LCSW
+endorsement_button: See fees & insurance
+
+about_cta_title: Let's see if we're a good fit
+about_cta_text: Call {phone} or send a message for a free 15-minute consultation.
+
+
+# ============================================================================
+#  FEES & INSURANCE PAGE
+# ============================================================================
+
+fees_title: Fees & Insurance | Renew Counseling, Milford PA
+fees_description: Session fees ({fee_individual} individual, {fee_couples} couples), Medicare, sliding scale, and payment options for Renew Counseling in Milford, PA.
+
+fees_eyebrow: Fees & Insurance
+fees_heading: Clear pricing, no surprises.
+fees_text: What sessions cost and how to pay.
+
+rates_eyebrow: Rates
+rates_title: Session fees
+price_consult_title: Consultation
+price_consult: Free
+price_consult_text: 15-minute call to see if we're a good fit.
+price_individual_title: Individual session
+price_individual: {fee_individual}
+price_individual_text: In person in Milford or online.
+price_couples_title: Couples session
+price_couples: {fee_couples}
+price_couples_text: In person in Milford or online.
+
+insurance_eyebrow: Insurance
+insurance_title: Using insurance
+insurance_accepted_title: Accepted insurance
+insurance_accepted:
+- Medicare
+insurance_other: Have a different plan? Mention your provider when you reach out and I'll help you look at your options.
+insurance_questions_title: Questions to ask your insurer
+insurance_questions:
+- Do I have outpatient mental health benefits?
+- What's my deductible and copay?
+- Are telehealth sessions covered?
+- Do I need pre-authorization?
+
+payment_title: Payment
+payment_text: Cash, check, card, Venmo, and Zelle.
+sliding_title: Sliding scale
+sliding_text: Reduced fees are available if you're eligible. [Ask me about applying.](contact.html#contact-form)
+cancel_title: Cancellations
+cancel_text: Cancellations within 24 hours of your appointment will result in a $50 fee.
+
+gfe_title: Good Faith Estimate
+gfe_text: If you're not using insurance, you have the right to a Good Faith Estimate of your costs under the No Surprises Act. Ask me anytime, or visit [cms.gov/nosurprises](https://www.cms.gov/nosurprises).
+
+fees_cta_title: Questions about cost?
+fees_cta_text: Ask during your free consultation. No commitment.
+
+
+# ============================================================================
+#  CONTACT PAGE
+# ============================================================================
+
+contact_title: Contact & Location | Renew Counseling, Milford PA
+contact_description: Contact Renew Counseling at {address_street}, {address_city}, {address_state} {address_zip}. Call {phone} for a free 15-minute consultation.
+
+contact_eyebrow: Contact
+contact_heading: Let's talk.
+contact_text: Call {phone} or send a message for a free 15-minute consultation.
+
+contact_info_title: Hours & location
+office_label: Office
+directions_link: Get directions →
+getting_here_label: Getting here
+# One detail per line: Label | Detail
+getting_here:
+- Parking | Free parking on site
+- Entrance | Lower lot
+- Accessibility | Wheelchair accessible
+- Waiting room | Yes. There's no check-in. Have a seat and I'll come get you at your appointment time.
+- Online | Telehealth for residents of PA and NJ
+- Areas served | Milford and Pike County, PA; Port Jervis and Orange County, NY; Sussex County, NJ
+phone_label: Phone
+email_label: Email
+hours_label: Hours
+hours_text: By appointment.
+hours_highlight: Evening and weekend appointments available.
+map_title: Map showing the Renew Counseling office
+
+form_heading: Send me a message
+form_status: Now accepting new clients
+form_profile_alt: Elisa D. Yost
+schedule_note: To schedule, call {phone} or email {email}. You can also send a message below and I'll reach out to set up a time.
+form_note: Please don't include private health details here. In an emergency, call or text [988](tel:988).
+form_message_hint: If you would like to pay with insurance, please note your provider.
+
+
+# ============================================================================
+#  PRIVACY PAGE
+# ============================================================================
+
+privacy_title: Privacy | Renew Counseling
+privacy_description: How the Renew Counseling website handles your information, and how to get the Notice of Privacy Practices.
+
+privacy_eyebrow: Privacy
+privacy_heading: Your privacy
+privacy_text: How this website handles your information, and how to get my Notice of Privacy Practices.
+
+npp_title: Notice of Privacy Practices
+npp_text: As a licensed counselor, I am required to protect your health information and to tell you how it may be used and shared. My Notice of Privacy Practices explains this in detail, along with your rights.
+# When the PDF is ready, replace this line with:  [Download the Notice of Privacy Practices](docs/notice-of-privacy-practices.pdf)
+npp_link: [[Link the Notice of Privacy Practices PDF here]]
+npp_paper: You can also ask me for a paper copy at any time.
+
+website_policy_title: Website privacy policy
+privacy_updated_label: Last updated:
+privacy_updated: [[date]]
+
+privacy_collects_title: What this site collects
+privacy_collects: If you use the contact form, the site collects what you type: your name, email, phone number, and message. It does not use tracking or advertising cookies, and it does not run analytics.
+privacy_handled_title: How your message is handled
+privacy_handled: Form messages are delivered to me by email through a form service, Formspree. Email and web forms are not a fully secure way to share health information, so please keep your message brief and save personal details for our conversation.
+privacy_used_title: How it's used
+privacy_used: I use your information only to respond to you and to schedule a consultation. I do not sell or share it for marketing.
+privacy_services_title: Other services on this site
+privacy_services:
+- **Google Maps** shows the office map on the Contact page. Google may collect basic technical information when the map loads.
+privacy_questions_title: Questions
+privacy_questions: Call {phone}, email {email}, or write to {legal_name}, {address_street}, {address_city}, {address_state} {address_zip}.
+privacy_crisis_title: In a crisis
+privacy_crisis: This website and its contact form are not monitored for emergencies. If you are in crisis, call or text [988](tel:988) or call [911](tel:911).
+
+
+# ============================================================================
+#  "PAGE NOT FOUND" PAGE
+# ============================================================================
+
+notfound_title: Page not found | Renew Counseling
+notfound_description: This page could not be found.
+notfound_eyebrow: Page not found
+notfound_heading: This path doesn't lead anywhere.
+notfound_text: The page you're looking for may have moved. Let's get you back on track.
+notfound_home_button: Go to the home page
+notfound_contact_button: Contact

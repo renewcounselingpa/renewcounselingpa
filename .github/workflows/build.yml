@@ -1,0 +1,38 @@
+name: Build site from content.txt
+
+# Runs whenever the site's text or templates change. It rebuilds the web pages
+# and saves them back to the repository, which updates the live site.
+on:
+  push:
+    branches: [main]
+    paths:
+      - content.txt
+      - templates/**
+      - build.py
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: build-site
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 build.py
+      - name: Save the rebuilt pages
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "Pages already up to date."
+          else
+            git commit -m "Rebuild pages from content.txt"
+            git pull --rebase
+            git push
+          fi

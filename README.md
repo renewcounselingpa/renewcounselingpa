@@ -2,7 +2,9 @@
 
 The website for **Renew Counseling**, the private counseling practice of Elisa D. Yost, MS, LPC, in Milford, PA. The business is registered as Elisa D Yost LLC.
 
-It's a plain static site: HTML pages, one stylesheet and one small JavaScript file. There's no build step, framework or package manager. To preview it, open `index.html` in a browser.
+It's a plain static site: HTML pages, one stylesheet and one small JavaScript file. **All the words on the site live in one file, `content.txt`.** A small script (`build.py`, Python standard library only) combines it with the page layouts in `templates/` to produce the `.html` files. There's no framework or package manager. To preview it, run `python3 build.py`, then open `index.html` in a browser.
+
+> **Non-technical editors:** see [EDITING.md](EDITING.md). Changing text only needs a web browser. GitHub rebuilds the pages automatically when `content.txt` is saved.
 
 - **Live site (for now):** <http://griffinansel.com/renewcounselingpa/>. GitHub Pages serves it from the `main` branch.
 - **Intended domain:** `https://www.renewcounselingpa.com/`. This domain is **not registered yet** (see the TODO list).
@@ -39,7 +41,7 @@ It's a plain static site: HTML pages, one stylesheet and one small JavaScript fi
 
 - [ ] **Get a working email address.** The domain `renewcounselingpa.com` isn't registered, so `elisa@renewcounselingpa.com` can't receive mail. Anything sent to it bounces. That address appears on every page and in the contact form's backup option (`js/main.js`). Choose one fix:
   - Register `renewcounselingpa.com` and set up email on it, for example with Google Workspace or the registrar's email service. Then follow [Domain name](#domain-name).
-  - **Or** use an address Elisa already has for now: find and replace `elisa@renewcounselingpa.com` in every `.html` file and in `js/main.js`.
+  - **Or** use an address Elisa already has for now: change `email` in `content.txt`.
 - [ ] **Connect the contact form.** It still uses the placeholder `YOUR_FORM_ID`, so pressing **Send message** doesn't send anything; it only offers buttons to email the message instead. Follow [Contact form (Formspree)](#contact-form-formspree). This requires a working email address first.
 - [ ] **Confirm which phone number clients should call.** The site and Psychology Today use **(570) 734-7798**. The federal NPI registry lists the practice phone as **(570) 832-0833**. Insurers and directories copy their listings from the NPI registry, so update whichever one is wrong. The NPI record can be edited at <https://nppes.cms.hhs.gov>.
 
@@ -48,7 +50,7 @@ It's a plain static site: HTML pages, one stylesheet and one small JavaScript fi
 - [x] **Cancellation policy** (`fees.html`): $50 fee for cancellations within 24 hours of the appointment.
 - [ ] **Notice of Privacy Practices** (`privacy.html`): add her NPP as a PDF (for example `docs/notice-of-privacy-practices.pdf`) and link it where the placeholder is.
 - [ ] **Privacy page review** (`privacy.html`): Elisa should review the whole page and set the "Last updated" date. It's a plain-language starting point, not legal advice.
-- [ ] **Photo of Elisa in her office** (`images/headshot-3.jpg`, About page): it's currently a stock photo of plants. When it's replaced, update its `alt` text in `about.html`.
+- [ ] **Photo of Elisa in her office** (`images/headshot-3.jpg`, About page): it's currently a stock photo of plants. When it's replaced, update `about_approach_photo_alt` in `content.txt`.
 - [ ] **Larger portrait** (`images/elisa-yost.jpg`): the current file is only 320×400. A larger original (at least 1000×1250) would look sharper.
 - [ ] **Final logo** (`images/logo.svg`): replace it with the final fig-tree logo, then recreate the icons and the link-preview image (see [Photos and images](#photos-and-images)).
 
@@ -67,6 +69,7 @@ It's a plain static site: HTML pages, one stylesheet and one small JavaScript fi
 ```bash
 git clone https://github.com/gansel51/renewcounselingpa.git
 cd renewcounselingpa
+python3 build.py           # regenerates the .html pages from content.txt + templates/
 open index.html            # macOS; or double-click the file
 ```
 
@@ -85,7 +88,12 @@ To publish a change, commit it and push to `main`. GitHub Pages updates the live
 
 ```
 .
-├── index.html          Home
+├── content.txt         ALL the website's text (the file to edit for wording changes)
+├── build.py            Builds the pages below from content.txt + templates/
+├── templates/          Page layouts with {{placeholders}} (_layout.html is the header/footer)
+├── .github/workflows/  Runs build.py automatically when content.txt changes
+├── EDITING.md          Plain-language guide for editing content.txt on github.com
+├── index.html          Home            (generated; don't edit by hand)
 ├── therapies.html      Focused Therapies
 ├── about.html          About Me
 ├── fees.html           Fees & Insurance
@@ -98,8 +106,8 @@ To publish a change, commit it and push to `main`. GitHub Pages updates the live
 │   └── main.js         Mobile menu, mobile call bar, footer year, contact form
 ├── images/             Photos, logo, icons, link-preview image
 ├── fonts/              Site fonts (.woff2) and their licenses
-├── sitemap.xml         Page list for search engines
-├── robots.txt          Tells search engines they may crawl everything
+├── sitemap.xml         Page list for search engines (generated)
+├── robots.txt          Tells search engines they may crawl everything (generated)
 ├── .nojekyll           Tells GitHub Pages to serve files as-is (no Jekyll processing)
 └── README.md           This file
 ```
@@ -120,48 +128,48 @@ To publish a change, commit it and push to `main`. GitHub Pages updates the live
 
 ---
 
-## Shared page parts
+## Content, templates and the build
 
-There are no templates, so these parts are **copied into every page**. A change to any of them has to be made in all seven `.html` files:
+**The `.html` files in the project root, `sitemap.xml` and `robots.txt` are generated.** Don't edit them directly; the next build overwrites them.
 
-- **Header:** logo, navigation, "Request a free consultation" button.
-- **Crisis bar:** the 988 / 911 notice above the footer.
-- **Footer:** address, phone, email, license number, page links.
-- **Mobile Call/Message bar:** the sticky bar shown on phones.
-- **`<head>`:** font preloads, icons, stylesheet and link-preview tags. Each page has its own title and description.
+- **Words** → edit `content.txt` (format and special marks are explained in its header).
+- **Layout/markup** → edit the files in `templates/`. `_layout.html` holds the parts shared by every page: `<head>`, header and navigation, crisis bar, footer and the mobile Call/Message bar. `_jsonld.html` is the structured data for the home page. Each page has its own template (`index.html`, `about.html`, …) containing the contents of `<main>`.
+- Then run `python3 build.py` and commit both the source files and the regenerated pages.
 
-The quickest way to make a site-wide change is your editor's "find in files" / "replace in files" (in VS Code: <kbd>Cmd/Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>H</kbd>).
+**Automatic builds:** `.github/workflows/build.yml` runs `build.py` on GitHub whenever `content.txt`, `templates/` or `build.py` change on `main`, and commits the regenerated pages. That is what lets someone edit `content.txt` in the browser and have the site update. If a line in `content.txt` is malformed, the build fails with a plain-language message (shown in the repository's **Actions** tab) and the live site stays unchanged. Locally, `git pull` after an automatic rebuild before pushing your own changes.
+
+**Template syntax** (see `build.py` for details):
+
+| Syntax | Meaning |
+|---|---|
+| `{{key}}` | The text for `key:` in `content.txt`, with bold/italic/links applied |
+| `{{plain key}}` | Same, as plain text safe for attributes (titles, alt text, meta tags) |
+| `{{json key}}`, `{{json_list key}}` | As JSON, for the structured data |
+| `{{#each list}}…{{this}}…{{/each}}` | Repeat for each `- item` of a list. Use `{{this.1}}` / `{{this.2}}` for `Part one \| Part two` items |
+| `{{#if key}}…{{/if}}`, `{{#unless key}}…{{/unless}}` | Show only when the setting is on (anything but empty/`no`/`false`/`off`) |
+| `{{> file.html}}` | Include another template |
+| `{{current page.html}}` | ` aria-current="page"` when building that page (navigation) |
+
+In `content.txt` text, `{key}` inserts another setting (e.g. `{years}`), and `{phone}` / `{email}` become links. Derived values `phone_tel`, `address_line2` and `map_query` are computed by the build.
+
+**Adding a new page:** create `templates/newpage.html` (the contents of `<main>`), add `newpage_title:` and `newpage_description:` plus its text to `content.txt`, add an entry to `PAGES` in `build.py`, and add a link to the navigation in `templates/_layout.html`. `sitemap.xml` is generated from `PAGES`.
 
 ---
 
 ## Common edits
 
-### Contact details and other facts that appear in several places
+Everything below is in `content.txt`; each fact is stored once and filled in wherever it appears.
 
-| Detail | Where it appears |
+| Detail | Setting |
 |---|---|
-| Phone `(570) 734-7798` and `tel:+15707347798` | Every `.html` file and `js/main.js` (the form's messages). Update **both** spellings. |
-| Email `elisa@renewcounselingpa.com` | Every `.html` file (including the structured data in `index.html`) and `js/main.js` |
-| Address `102 Wheatfield Drive, Suite B` | Every `.html` file, the Google Maps links in `contact.html`, and the structured data in `index.html` |
-| PA license `PC020602` | Footer of every page and `about.html` |
-| NJ license `37PC01265200` | `about.html` |
-| Fees (`$130`, `$150`) | `fees.html`, `index.html` (fees at a glance), and `"priceRange"` in the structured data in `index.html` |
-| Insurance (Medicare) | `fees.html`, `index.html` |
-| Years in practice ("7 years") | `index.html`, `about.html`. **Update it each year**, along with Psychology Today. |
-| Areas served | `contact.html` ("Getting here") and `"areaServed"` in `index.html` |
-| Domain `www.renewcounselingpa.com` | `<head>` of each page, `index.html` structured data, `sitemap.xml`, `robots.txt` |
-
-### Turning off "Accepting new clients"
-
-The green "Now accepting new clients" note is in `contact.html` (on the form), and "Accepting new clients" is in the hero of `index.html`. Edit or remove both.
-
-### Adding a new page
-
-1. Copy an existing page, e.g. `privacy.html`, so you start with the shared header and footer.
-2. Change `<title>`, `<meta name="description">`, `<link rel="canonical">` and the `og:` tags.
-3. Replace the content inside `<main id="main">`.
-4. Add a link to the navigation (and footer, if wanted) in **every** page. Mark the current page's nav link with `aria-current="page"`.
-5. Add the page to `sitemap.xml`.
+| Phone, email | `phone`, `email` |
+| Address (also drives the map and directions) | `address_street`, `address_city`, `address_state`, `address_zip` |
+| PA / NJ license | `pa_license`, `nj_license` |
+| Fees | `fee_individual`, `fee_couples` |
+| Years in practice | `years`. **Update it each year**, along with Psychology Today. |
+| Domain (canonical links, link previews, sitemap, robots) | `site_url` |
+| Contact form ID | `formspree_id` |
+| "Accepting new clients" on/off | `accepting_clients` (`yes`/`no`) |
 
 ### Writing style
 
@@ -171,13 +179,7 @@ The site speaks in Elisa's voice, in the first person ("I", "my"). Bio wording, 
 
 ## Placeholders
 
-Text that still needs real content is wrapped like this:
-
-```html
-<span class="tbd">[date]</span>
-```
-
-On the site it shows with a **yellow highlight** (the `.tbd` style in `css/styles.css`) so it's easy to spot. To find every one, search the project for `class="tbd"`, and search for `TODO` to find notes left in the HTML. When real content goes in, remove the `<span class="tbd">` wrapper and the square brackets.
+Text that still needs real content is written in `content.txt` with double square brackets, like `[[date]]`. On the site it shows with a **yellow highlight** (the `.tbd` style in `css/styles.css`). To find every one, search `content.txt` for `[[`. When real content goes in, remove the double brackets.
 
 ---
 
@@ -203,7 +205,7 @@ To swap a photo, replace the file in `images/` **using the same filename**. The 
 **Tips**
 - Resize photos before adding them, to about 2000px wide or less (the sizes above are ideal), and save as JPEG at roughly 75–80% quality. The whole `images/` folder is currently about 2.3 MB.
 - Banners and "Get in touch" bands have text over them, so pick photos that are calm and not too busy, and check that the text is readable.
-- When you change what a photo shows, update its `alt` text in the HTML (see [Accessibility](#accessibility)). Background images set in CSS (the hero, banners and CTA bands) are decorative and have no `alt`.
+- When you change what a photo shows, update its alt text in `content.txt` (the `…_alt` lines; see [Accessibility](#accessibility)). Background images set in CSS (the hero, banners and CTA bands) are decorative and have no `alt`.
 - When the logo changes, recreate the four icon PNGs and `og-image.jpg` from it.
 
 **Where the current photos come from:** the nature and room photos are free public-domain (CC0) photos from Unsplash, downloaded via [Wikimedia Commons](https://commons.wikimedia.org). No photo credit is required. Good sources for more: [Unsplash](https://unsplash.com) and [Pexels](https://pexels.com). Avoid stock photos of people, so visitors aren't misled about who they'll be seeing.
@@ -259,7 +261,7 @@ The form on `contact.html` sends messages through [Formspree](https://formspree.
 
 1. Create a free account at <https://formspree.io> using the email address where messages should arrive. It must be a working address.
 2. Click **New Form**, name it (e.g. "Renew Counseling"), and copy its ID: the part after `/f/` in the address Formspree shows, e.g. `https://formspree.io/f/xyzabcde` → `xyzabcde`.
-3. In `contact.html`, replace `YOUR_FORM_ID` in `action="https://formspree.io/f/YOUR_FORM_ID"` with that ID. Commit and push.
+3. In `content.txt`, replace `YOUR_FORM_ID` in the `formspree_id:` line with that ID. Commit and push.
 4. On the live site, send a test message. Formspree emails you asking you to confirm the first submission. After that, messages arrive normally.
 
 **What gets sent:** first name, last name, email, phone (optional) and message. The email subject is set by the hidden `_subject` field ("New message from renewcounselingpa.com"). A hidden `_gotcha` field catches spam bots. People never see it, but bots fill it in, and Formspree drops those messages.
@@ -319,7 +321,7 @@ The site is written for **`https://www.renewcounselingpa.com/`**, but that domai
 2. Set up email on it, so `elisa@renewcounselingpa.com` works.
 3. Connect it to GitHub Pages (next section).
 
-If you choose a **different domain**, find and replace `www.renewcounselingpa.com` in every `.html` file, `sitemap.xml` and `robots.txt`. Also update the email address if it changes.
+If you choose a **different domain**, change `site_url` in `content.txt` (and `email` if it changes).
 
 ---
 
@@ -353,7 +355,7 @@ Run through this after significant changes, and on the live domain before launch
 - [ ] Contact form: submitting it empty shows error messages; a real test message arrives in Elisa's inbox.
 - [ ] Phone layout (about 375px wide): the menu opens and closes, the Call/Message bar appears and hides correctly, and nothing scrolls sideways.
 - [ ] Photos load, and the text over the banner photos is readable.
-- [ ] No yellow placeholder highlights are left (search for `class="tbd"`).
+- [ ] No yellow placeholder highlights are left (search `content.txt` for `[[`).
 - [ ] A nonexistent address (e.g. `/nope`) shows the 404 page.
 - [ ] Sharing the home page link by text or social media shows the right title and preview image.
 - [ ] The map shows the right location, and "Get directions" opens it.

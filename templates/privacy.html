@@ -1,0 +1,38 @@
+    <section class="page-banner" style="background-image:url('images/banner-path.jpg')">
+      <div class="container">
+        <span class="eyebrow">{{privacy_eyebrow}}</span>
+        <h1>{{privacy_heading}}</h1>
+        <p>{{privacy_text}}</p>
+      </div>
+    </section>
+
+    <!-- TODO: Have Elisa review this page. It is a plain-language starting point, not legal advice. -->
+    <section class="section">
+      <div class="container prose">
+        <h2 id="npp">{{npp_title}}</h2>
+        <p>{{npp_text}}</p>
+        <p>{{npp_link}}</p>
+        <p>{{npp_paper}}</p>
+
+        <h2 id="website">{{website_policy_title}}</h2>
+        <p class="muted">{{privacy_updated_label}} {{privacy_updated}}</p>
+        <h3>{{privacy_collects_title}}</h3>
+        <p>{{privacy_collects}}</p>
+        <h3>{{privacy_handled_title}}</h3>
+        <p>{{privacy_handled}}</p>
+        <h3>{{privacy_used_title}}</h3>
+        <p>{{privacy_used}}</p>
+        <h3>{{privacy_services_title}}</h3>
+        <ul class="credentials">
+{{#each privacy_services}}
+          <li><span>{{this}}</span></li>
+{{/each}}
+        </ul>
+        <h3>{{privacy_questions_title}}</h3>
+        <p>{{privacy_questions}}</p>
+        <div class="notice">
+          <h3>{{privacy_crisis_title}}</h3>
+          <p>{{privacy_crisis}}</p>
+        </div>
+      </div>
+    </section>
