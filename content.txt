@@ -39,7 +39,7 @@ business_name: Renew Counseling
 therapist_name: Elisa D. Yost, MS, LPC
 legal_name: Elisa D Yost LLC
 
-phone: (570) 734-7798
+phone: (570) 832-0833
 email: elisa@renewcounselingpa.com
 
 address_street: 102 Wheatfield Drive, Suite B
