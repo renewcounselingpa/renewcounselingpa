@@ -407,8 +407,6 @@ npp_link: [Download the Notice of Privacy Practices](docs/notice-of-privacy-prac
 npp_paper: You can also ask me for a paper copy at any time.
 
 website_policy_title: Website privacy policy
-privacy_updated_label: Last updated:
-privacy_updated: [[date]]
 
 privacy_collects_title: What this site collects
 privacy_collects: If you use the contact form, the site collects what you type: your name, email, phone number, and message. It does not use tracking or advertising cookies, and it does not run analytics.
