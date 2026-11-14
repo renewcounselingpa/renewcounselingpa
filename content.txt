@@ -402,7 +402,7 @@ privacy_text: How this website handles your information, and how to get my Notic
 npp_title: Notice of Privacy Practices
 npp_text: As a licensed counselor, I am required to protect your health information and to tell you how it may be used and shared. My Notice of Privacy Practices explains this in detail, along with your rights.
 # When the PDF is ready, replace this line with:  [Download the Notice of Privacy Practices](docs/notice-of-privacy-practices.pdf)
-npp_link: [[Link the Notice of Privacy Practices PDF here]]
+npp_link: [Download the Notice of Privacy Practices](docs/notice-of-privacy-practices.pdf)
 npp_paper: You can also ask me for a paper copy at any time.
 
 website_policy_title: Website privacy policy
