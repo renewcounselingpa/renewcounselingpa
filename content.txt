@@ -170,7 +170,7 @@ home_steps:
 - **Schedule your first session,** in Milford or online.
 home_office_alt: Calm room with a plant and soft natural light
 
-# Bottom band
+# Bottom bands
 home_cta_title: Wondering if therapy might help?
 home_cta_text: Let's explore your concerns and goals together, starting with a free, no-pressure call.
 
