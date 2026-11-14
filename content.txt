@@ -80,7 +80,7 @@ nav_fees: Fees & Insurance
 nav_contact: Contact
 
 # The main button. It appears many times across the site.
-cta_button: Request a free consultation
+cta_button: Call for a free consultation
 
 crisis_notice: If you are in crisis or thinking about harming yourself, call or text [988](tel:988) (Suicide & Crisis Lifeline) or call [911](tel:911).
 
@@ -130,7 +130,7 @@ trust_items:
 - **{years} years** in practice
 - Licensed in **PA & NJ**
 - [Verified on **Psychology Today**]({psychology_today_url})
-- **Medicare** accepted
+- **United Healthcare & Medicare** accepted
 
 # "Welcome" section
 home_welcome_eyebrow: Welcome
@@ -154,11 +154,11 @@ families_blurb: Better communication and stronger relationships.
 
 # Fees at a glance
 fee_strip_consult_label: Consultation
-fee_strip_consult: Free, 15 min
+fee_strip_consult: Free 15-min phone call
 fee_strip_sessions_label: Sessions
 fee_strip_sessions: {fee_individual} individual · {fee_couples} couples
 fee_strip_insurance_label: Insurance
-fee_strip_insurance: Medicare · sliding scale available
+fee_strip_insurance: United Healthcare · Medicare · sliding scale available
 fee_strip_button: Fees & insurance
 
 # Three steps
@@ -166,7 +166,7 @@ home_steps_eyebrow: Getting started
 home_steps_title: Three simple steps
 home_steps:
 - **Call** {phone} or send a message.
-- **Free 15-minute call** to see if we're a fit.
+- **Free 15-minute phone call** to see if we're a fit.
 - **Schedule your first session,** in Milford or online.
 home_office_alt: Calm room with a plant and soft natural light
 
@@ -239,13 +239,13 @@ methods_title: Methods I use
 methods:
 - CBT | Reshape unhelpful thoughts and habits.
 - Trauma-Focused CBT | Structured trauma care for teens and families.
-- DBT | Skills for strong emotions and relationships.
+- DBT | Skills for managing strong emotions and strengthening relationships.
 - ACT | Accept what's hard and move toward what matters.
 - Narrative Therapy | Look at the story you tell about your life, and find room to rewrite it.
 - Christian Counseling | Bring your faith into your goals, if you'd like.
 
 therapies_cta_title: Not sure where to start?
-therapies_cta_text: A free 15-minute consultation is a good first step.
+therapies_cta_text: Call {phone} for a free 15-minute consultation. It is a good first step.
 
 
 # ============================================================================
@@ -297,7 +297,7 @@ endorsement_by: **Micah Sweeney**, MEd, LCSW
 endorsement_button: See fees & insurance
 
 about_cta_title: Let's see if we're a good fit
-about_cta_text: Call {phone} or send a message for a free 15-minute consultation.
+about_cta_text: Call {phone} for a free 15-minute consultation, or send a message.
 
 
 # ============================================================================
@@ -305,7 +305,7 @@ about_cta_text: Call {phone} or send a message for a free 15-minute consultation
 # ============================================================================
 
 fees_title: Fees & Insurance | Renew Counseling, Milford PA
-fees_description: Session fees ({fee_individual} individual, {fee_couples} couples), Medicare, sliding scale, and payment options for Renew Counseling in Milford, PA.
+fees_description: Session fees ({fee_individual} individual, {fee_couples} couples), United Healthcare, Medicare, sliding scale, and payment options for Renew Counseling in Milford, PA.
 
 fees_eyebrow: Fees & Insurance
 fees_heading: Clear pricing, no surprises.
@@ -315,7 +315,7 @@ rates_eyebrow: Rates
 rates_title: Session fees
 price_consult_title: Consultation
 price_consult: Free
-price_consult_text: 15-minute call to see if we're a good fit.
+price_consult_text: A 15-minute phone call to see if we are a good fit. Call {phone}.
 price_individual_title: Individual session
 price_individual: {fee_individual}
 price_individual_text: In person in Milford or online.
@@ -327,6 +327,7 @@ insurance_eyebrow: Insurance
 insurance_title: Using insurance
 insurance_accepted_title: Accepted insurance
 insurance_accepted:
+- United Healthcare
 - Medicare
 insurance_other: Have a different plan? Mention your provider when you reach out and I'll help you look at your options.
 insurance_questions_title: Questions to ask your insurer
@@ -359,7 +360,7 @@ contact_description: Contact Renew Counseling at {address_street}, {address_city
 
 contact_eyebrow: Contact
 contact_heading: Let's talk.
-contact_text: Call {phone} or send a message for a free 15-minute consultation.
+contact_text: Call {phone} for a free 15-minute consultation, or send a message.
 
 contact_info_title: Hours & location
 office_label: Office

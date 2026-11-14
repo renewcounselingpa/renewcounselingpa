@@ -5,8 +5,8 @@
         <h1>{{hero_title}}</h1>
         <p>{{hero_text}}</p>
         <div class="hero-actions">
-          <a class="btn btn-primary" href="contact.html#contact-form">{{cta_button}}</a>
-          <a class="btn btn-light" href="tel:{{phone_tel}}">Call {{phone}}</a>
+          <a class="btn btn-primary" href="tel:{{phone_tel}}">{{cta_button}}</a>
+          <a class="btn btn-light" href="contact.html#contact-form">{{footer_message_link}}</a>
         </div>
 {{#if accepting_clients}}
         <p class="hero-note"><span class="status-dot" aria-hidden="true"></span>{{hero_note}}</p>
@@ -37,7 +37,7 @@
           <p class="lead">{{home_welcome_lead}}</p>
           <p>{{home_welcome_text}}</p>
           <div class="btn-row">
-            <a class="btn btn-primary" href="contact.html#contact-form">{{cta_button}}</a>
+            <a class="btn btn-primary" href="tel:{{phone_tel}}">{{cta_button}}</a>
             <a class="btn btn-outline" href="about.html">{{home_welcome_button}}</a>
           </div>
         </div>
@@ -116,7 +116,7 @@
             <li><span>{{this}}</span></li>
 {{/each}}
           </ol>
-          <a class="btn btn-primary" href="contact.html#contact-form">{{cta_button}}</a>
+          <a class="btn btn-primary" href="tel:{{phone_tel}}">{{cta_button}}</a>
         </div>
       </div>
     </section>
@@ -126,6 +126,6 @@
       <div class="container">
         <h2>{{home_cta_title}}</h2>
         <p>{{home_cta_text}}</p>
-        <a class="btn btn-primary" href="contact.html#contact-form">{{cta_button}}</a>
+        <a class="btn btn-primary" href="tel:{{phone_tel}}">{{cta_button}}</a>
       </div>
     </section>
