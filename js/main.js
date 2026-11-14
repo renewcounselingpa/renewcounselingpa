@@ -147,6 +147,10 @@ if (form) {
       return;
     }
 
+    // Give each message its own subject so email apps (Gmail) don't group them into one thread
+    form.elements['_subject'].value =
+      `New message from ${form.elements['first_name'].value.trim()} ${form.elements['last_name'].value.trim()} (renewcounselingpa.com)`;
+
     button.disabled = true;
     button.textContent = 'Sending…';
     try {
