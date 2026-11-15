@@ -4,18 +4,18 @@ You don't need to know anything about GitHub or code. All the text on the websit
 
 ## Steps
 
-1. Go to the repository page on GitHub and sign in. (You need to have been invited to edit it.)
-2. Click the file **`content.txt`**.
+1. Go to the repository page on GitHub and sign in. [Visit the repo](https://github.com/renewcounselingpa/renewcounselingpa/tree/main)
+2. Click the file **`content.txt`**. [Visit content.txt](https://github.com/renewcounselingpa/renewcounselingpa/blob/main/content.txt)
 3. Click the **pencil icon** (✏️, "Edit this file") at the top right of the file.
 4. Find the text you want to change. Use **Ctrl+F** (Windows) or **Cmd+F** (Mac) to search for a few of the words.
 5. Change the text. **Only change what comes after the first colon.** Leave the name before the colon alone.
 
    ```
    hero_title: Room to grow, at your own pace.
-   ^^^^^^^^^^  ^^^ change this part ^^^^^^^^^^
-   leave this
+   ^^^^^^^^^^  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+   leave this        change this part
    ```
-6. Click the green **Commit changes…** button at the top right, then **Commit changes** again in the box that appears. (The default message is fine.)
+6. Click the green **Commit changes…** button at the top right, then **Commit changes** again in the box that appears. It'll ask you for a message, which you can change or leave as default.
 7. Wait **1–3 minutes**. The website updates by itself. Reload the page (Ctrl/Cmd+Shift+R) to see it.
 
 ## Things you can do
@@ -33,7 +33,7 @@ You don't need to know anything about GitHub or code. All the text on the websit
 ## If something goes wrong
 
 - **Made a mistake you can't undo?** Open `content.txt`, click **History** (top right), pick an earlier version, and copy its text back.
-- **Site didn't change after a few minutes?** Click the **Actions** tab on GitHub. A red ✗ next to your change means a line in `content.txt` isn't written correctly. Click it to see which line and what's wrong, then fix that line. The live site keeps showing the old version until it's fixed, so it can't break.
+- **Site didn't change after a few minutes?** Click the **Actions** tab on GitHub ([here](https://github.com/renewcounselingpa/renewcounselingpa/actions)). A red ✗ next to your change means a line in `content.txt` isn't written correctly. Click it to see which line and what's wrong, then fix that line. The live site keeps showing the old version until it's fixed, so it can't break.
 - Every line must look like `name: text` (with the colon). Lists are `- item` lines directly under a name with nothing after the colon.
 
 ## What's *not* in `content.txt`
